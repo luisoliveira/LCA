@@ -13,9 +13,16 @@ public class Despesa implements Serializable{
 	/**
 	 * 
 	 */
+	
+	public Despesa (){
+		
+	}
+	
+	
 	private static final long serialVersionUID = -5953858768380671698L;
 	
-	private int codigo;
+	private int codigoDespesa;
+	private int codigoLancamento;
 	private int codigoTipoDespesa;
 	private int numeroProcesso;
 	private Date data;
@@ -23,11 +30,18 @@ public class Despesa implements Serializable{
 	private String observacao;
 	
 	
-	public int getCodigo() {
-		return codigo;
+	
+	public int getCodigoDespesa() {
+		return codigoDespesa;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoDespesa(int codigoDespesa) {
+		this.codigoDespesa = codigoDespesa;
+	}
+	public int getCodigoLancamento() {
+		return codigoLancamento;
+	}
+	public void setCodigoLancamento(int codigoLancamento) {
+		this.codigoLancamento = codigoLancamento;
 	}
 	public int getCodigoTipoDespesa() {
 		return codigoTipoDespesa;
@@ -59,7 +73,5 @@ public class Despesa implements Serializable{
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
-	
-	
 	
 }
