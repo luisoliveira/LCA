@@ -1,7 +1,7 @@
 package com.voidsoftware.lca.testes;
 
 import com.voidsoftware.lca.beans.Despesa;
-import com.voidsoftware.lca.persistence.dao.DespesaDAOImpl;
+import com.voidsoftware.lca.persistence.dao.DespesaDaoImpl;
 
 public class TestePersistencia {
 
@@ -11,7 +11,7 @@ public class TestePersistencia {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		DespesaDAOImpl despDao = new DespesaDAOImpl();
+		DespesaDaoImpl despDao = new DespesaDaoImpl();
 		Despesa desp = despDao.consultar(1);
 
 		System.out.println(desp.getCodigoLancamento());

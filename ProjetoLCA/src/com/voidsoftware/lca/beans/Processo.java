@@ -12,18 +12,46 @@ public class Processo implements Serializable {
 	}
 	
 	private int numero;
+	private int codigoPessoaForum;
+	private int codigoPessoaCliente;
+	private int codigoCausa;
+	private int codigoCobranca;
 	private String descricao;
 	private Date dataAbertura;
 	private Date dataFechamento;
 	private int diaVencimento;
-	private char resultadoCausa;
-	private String observacoes;
-	
+	private int codigoResultado;
+	private String observacao;
+
 	public int getNumero() {
 		return numero;
 	}
 	public void setNumero(int numero) {
 		this.numero = numero;
+	}
+	public int getCodigoPessoaForum() {
+		return codigoPessoaForum;
+	}
+	public void setCodigoPessoaForum(int codigoPessoaForum) {
+		this.codigoPessoaForum = codigoPessoaForum;
+	}
+	public int getCodigoPessoaCliente() {
+		return codigoPessoaCliente;
+	}
+	public void setCodigoPessoaCliente(int codigoPessoaCliente) {
+		this.codigoPessoaCliente = codigoPessoaCliente;
+	}
+	public int getCodigoCausa() {
+		return codigoCausa;
+	}
+	public void setCodigoCausa(int codigoCausa) {
+		this.codigoCausa = codigoCausa;
+	}
+	public int getCodigoCobranca() {
+		return codigoCobranca;
+	}
+	public void setCodigoCobranca(int codigoCobranca) {
+		this.codigoCobranca = codigoCobranca;
 	}
 	public String getDescricao() {
 		return descricao;
@@ -49,17 +77,19 @@ public class Processo implements Serializable {
 	public void setDiaVencimento(int diaVencimento) {
 		this.diaVencimento = diaVencimento;
 	}
-	public char getResultadoCausa() {
-		return resultadoCausa;
+	public int getCodigoResultado() {
+		return codigoResultado;
 	}
-	public void setResultadoCausa(char resultadoCausa) {
-		this.resultadoCausa = resultadoCausa;
+	public void setCodigoResultado(int codigoResultado) {
+		this.codigoResultado = codigoResultado;
 	}
 	public String getObservacoes() {
-		return observacoes;
+		return observacao;
 	}
 	public void setObservacoes(String observacoes) {
-		this.observacoes = observacoes;
+		this.observacao = observacoes;
 	}
+	
+	
 	
 }
