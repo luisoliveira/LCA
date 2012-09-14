@@ -75,7 +75,7 @@ public class DespesaDaoImpl implements DespesaDao {
 			
 			stmt.setInt(1, despesa.getCodigoLancamento());
 			stmt.setInt(2, despesa.getNumeroProcesso());
-			//stmt.setDate(3, despesa.getData()); 
+			stmt.setDate(3, new java.sql.Date(despesa.getData().getTime())); 
 			stmt.setDouble(4, despesa.getValor());
 			stmt.setString(5, despesa.getObservacao());
 			stmt.setInt(6, despesa.getCodigoDespesa());

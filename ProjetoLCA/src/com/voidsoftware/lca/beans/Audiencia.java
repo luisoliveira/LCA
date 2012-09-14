@@ -16,6 +16,8 @@ public class Audiencia implements Serializable {
 	private int codigoAdvogado;
 	private Date dataHoraAgenda;
 	private int salaForum;
+	
+	
 	public int getCodigoAudiencia() {
 		return codigoAudiencia;
 	}

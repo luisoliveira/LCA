@@ -84,7 +84,7 @@ public class ProcessoDaoImpl implements ProcessoDao {
 			stmt.setInt(3, processo.getCodigoCausa());
 			stmt.setInt(4, processo.getCodigoCobranca());
 			stmt.setString(5, processo.getDescricao());
-			stmt.setDate(6, (Date) processo.getDataAbertura());
+			stmt.setDate(6, new java.sql.Date(processo.getDataAbertura().getTime()));
 			stmt.setDate(7, (Date) processo.getDataFechamento());
 			stmt.setInt(8, processo.getDiaVencimento());
 			stmt.setInt(9, processo.getCodigoResultado());
