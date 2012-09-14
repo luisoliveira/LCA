@@ -11,7 +11,7 @@ import com.voidsoftware.lca.persistence.jdbc.ConnectionFactory;
 
 public class AudienciaDaoImpl implements AudienciaDao {
 
-	@Override
+	
 	public void cadastrar(Audiencia audiencia) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
@@ -56,7 +56,6 @@ public class AudienciaDaoImpl implements AudienciaDao {
 		}
 	}
 
-	@Override
 	public void atualizar(Audiencia audiencia) {
 		// TODO Auto-generated method stub
 		
