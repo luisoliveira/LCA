@@ -19,10 +19,10 @@ public class TestePersistencia {
 		System.out.println(desp.getNumeroProcesso());
 		System.out.println(desp.getData());
 		System.out.println(desp.getValor());
-		System.out.println(desp.getObservacao());
+		System.out.println(desp.getObservacao()); 
 		System.out.println("APOS ATUALIZAR !! ");
 
-		desp.setObservacao("NOTE BOOK 4430s - Luis Oliveira rm68308");
+		desp.setObservacao("NOTE BOOK 4430s - Luis");
 
 		despDao.atualizar(desp);
 

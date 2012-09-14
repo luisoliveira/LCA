@@ -49,7 +49,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 		} finally {
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -91,7 +91,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 		} finally {
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -132,7 +132,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -179,7 +179,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			try {
 				rs.close();
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

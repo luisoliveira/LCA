@@ -51,7 +51,7 @@ public class DespesaDaoImpl implements DespesaDao {
 		} finally {
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -96,7 +96,7 @@ public class DespesaDaoImpl implements DespesaDao {
 			
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -135,7 +135,7 @@ public class DespesaDaoImpl implements DespesaDao {
 			
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -178,7 +178,7 @@ public class DespesaDaoImpl implements DespesaDao {
 			try {
 				rs.close();
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

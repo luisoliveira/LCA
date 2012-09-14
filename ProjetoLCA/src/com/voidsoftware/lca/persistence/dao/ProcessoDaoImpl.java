@@ -56,7 +56,7 @@ public class ProcessoDaoImpl implements ProcessoDao {
 		} finally {
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -106,7 +106,7 @@ public class ProcessoDaoImpl implements ProcessoDao {
 		} finally {
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -145,7 +145,7 @@ public class ProcessoDaoImpl implements ProcessoDao {
 
 			try {
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -195,7 +195,7 @@ public class ProcessoDaoImpl implements ProcessoDao {
 			try {
 				rs.close();
 				stmt.close();
-				conn.close();
+				//conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
