@@ -5,11 +5,13 @@ import java.util.Date;
 
 public class Audiencia implements Serializable {
 		
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 3221757252085335525L;
 	
+	public Audiencia(){
+		
+		
+	}
 	
 	private int codigoAudiencia;
 	private int numeroProcesso;

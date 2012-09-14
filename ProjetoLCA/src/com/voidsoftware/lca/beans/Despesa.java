@@ -10,10 +10,7 @@ import java.util.Date;
  */
 public class Despesa implements Serializable{
 	
-	/**
-	 * 
-	 */
-	
+
 	public Despesa (){
 		
 	}

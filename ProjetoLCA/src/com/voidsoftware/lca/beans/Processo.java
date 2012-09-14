@@ -6,7 +6,8 @@ import java.util.Date;
 public class Processo implements Serializable {
 	
 	private static final long serialVersionUID = -5653538023743584304L;
-		
+	
+	
 	public Processo(){
 		
 	}
