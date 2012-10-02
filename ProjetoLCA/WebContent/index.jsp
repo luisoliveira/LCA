@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="s" uri="/struts-tags" %> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
+ 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Frota 2012</title>
-		 
+<title>LCAAdvocacia</title>
+		
 		<link type="text/css" href="js/jquery-ui/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
 		<link type="text/css" href="css/main.css" rel="stylesheet" />	
 		<link type="text/css" href="css/menu.css" rel="stylesheet" />
@@ -47,16 +46,15 @@
 <body>
 	<div id="header">
 		
-		<img src="img/logo.png" id="logo"></img>
-		<h2 id="title">Sistema de Controle de Frota Veicular</h2>  
-    
-    
+		<img src="img/logoAM.png" id="logo"></img>
+		<h2 id="title">Gerenciamento de Processos</h2>  
+      
 		<ul class="topnav">
-			<li><a href="index.jsp">Home</a></li>
+		    <li><a href="index.jsp">Home</a></li>
 		    <li>
 		        <a href="#">Cadastros</a>
 		        <ul class="subnav">
-		            <li><a href="cadastroAbastecimento.jsp">Abastecimento</a></li>
+		            <li><a href="#">Abastecimento</a></li>
 		            <li><a href="#">Manutenção</a></li>
 		        </ul>
 		    </li>
@@ -70,11 +68,11 @@
 		   
 		</ul>
  	</div>
- 	
+ 	 
  	<div id="content">
  	
- 	<h3>Bem vindo !</h3>
-
+ 		
+ 	
  	</div>
 
 </body>
