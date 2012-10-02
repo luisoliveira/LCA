@@ -30,15 +30,15 @@ public class ProcessoDaoImpl implements ProcessoDao {
 			stmt = conn.prepareStatement(sql);
 			
 			stmt.setInt(1, processo.getNumero());
-			stmt.setInt(2, processo.getCodigoPessoaForum());
-			stmt.setInt(3, processo.getCodigoPessoaCliente());
-			stmt.setInt(4, processo.getCodigoCausa());
-			stmt.setInt(5, processo.getCodigoCobranca());
+			stmt.setInt(2, processo.getForum().getCodigo());
+			stmt.setInt(3, processo.getCliente().getCodigo());
+			stmt.setInt(4, processo.getTipoCausa().getCodigo());
+			stmt.setInt(5, processo.getTipoCobranca().getCodigo());
 			stmt.setString(6, processo.getDescricao());
 			stmt.setDate(7, (Date) processo.getDataAbertura());
 			stmt.setDate(8, (Date) processo.getDataFechamento());
 			stmt.setInt(9, processo.getCodigoResultado());
-			stmt.setString(10, processo.getObservacoes());
+			stmt.setString(10, processo.getObservacao());
 			
 			
 			stmt.execute();
@@ -79,16 +79,16 @@ public class ProcessoDaoImpl implements ProcessoDao {
 			stmt = conn.prepareStatement(sql);
 			
 			
-			stmt.setInt(1, processo.getCodigoPessoaForum());
-			stmt.setInt(2, processo.getCodigoPessoaCliente());
-			stmt.setInt(3, processo.getCodigoCausa());
-			stmt.setInt(4, processo.getCodigoCobranca());
+			stmt.setInt(1, processo.getNumero());
+			stmt.setInt(2, processo.getForum().getCodigo());
+			stmt.setInt(3, processo.getCliente().getCodigo());
+			stmt.setInt(4, processo.getTipoCausa().getCodigo());
 			stmt.setString(5, processo.getDescricao());
 			stmt.setDate(6, new java.sql.Date(processo.getDataAbertura().getTime()));
 			stmt.setDate(7, (Date) processo.getDataFechamento());
 			stmt.setInt(8, processo.getDiaVencimento());
 			stmt.setInt(9, processo.getCodigoResultado());
-			stmt.setString(10, processo.getObservacoes());
+			stmt.setString(10, processo.getObservacao());
 			stmt.setInt(11, processo.getNumero());
 			
 			stmt.execute();
@@ -174,16 +174,16 @@ public class ProcessoDaoImpl implements ProcessoDao {
 
 			if (rs.next()) {
 				processo.setNumero(rs.getInt("NR_PROCESSO"));
-				processo.setCodigoPessoaForum(rs.getInt("CD_PESSOA_FORUM"));
-				processo.setCodigoPessoaCliente(rs.getInt("CD_PESSOA_CLIENTE"));
-				processo.setCodigoCausa(rs.getInt("CD_CAUSA"));
-				processo.setCodigoCobranca(rs.getInt("CD_COBRANCA"));
+				processo.getForum().setCodigo(rs.getInt("CD_PESSOA_FORUM"));
+				processo.getCliente().setCodigo(rs.getInt("CD_PESSOA_CLIENTE"));
+				processo.getTipoCausa().setCodigo(rs.getInt("CD_CAUSA"));
+				processo.getTipoCobranca().setCodigo(rs.getInt("CD_COBRANCA"));
 				processo.setDescricao(rs.getString("DS_PROCESSO"));
 				processo.setDataAbertura(rs.getDate("DT_ABERTURA"));
 				processo.setDataFechamento(rs.getDate("DT_FECHAMENTO"));
 				processo.setDiaVencimento(rs.getInt("DD_DIA_VENCIMENTO"));
 				processo.setCodigoResultado(rs.getInt("CD_RESULTADO"));
-				processo.setObservacoes("DS_OBSERVACAO");
+				processo.setObservacao("DS_OBSERVACAO");
 				
 				
 			}
