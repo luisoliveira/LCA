@@ -23,16 +23,16 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			
 			String sql = 
 					"INSERT INTO AM_AGENDA_AUDIENCIA " +
-					"( CD_AGENDA, NR_PROCESSO, CD_PESSOA_ADV, DT_HORA_AGENDA, SL_FORUM ) " +
-					"VALUES (?, ?, ?, ?, ?)";
+					"( NR_PROCESSO, CD_PESSOA_ADV, DT_HORA_AGENDA, SL_FORUM ) " +
+					"VALUES ( ?, ?, ?, ?)";
 			
 			stmt = conn.prepareStatement(sql);
 			
-			stmt.setInt(1, audiencia.getCodigoAudiencia());
-			stmt.setInt(2, audiencia.getNumeroProcesso());
-			stmt.setInt(3, audiencia.getCodigoAdvogado());
-			stmt.setDate(4, new java.sql.Date(audiencia.getDataHoraAgenda().getTime()));
-			stmt.setInt(5, audiencia.getSalaForum());
+			
+			stmt.setInt(1, audiencia.getNumeroProcesso());
+			stmt.setInt(2, audiencia.getCodigoAdvogado());
+			stmt.setDate(3, new java.sql.Date(audiencia.getDataHoraAgenda().getTime()));
+			stmt.setInt(4, audiencia.getSalaForum());
 			
 			stmt.execute();
 			
@@ -69,7 +69,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			String sql = "UPDATE INTO AM_AGENDA_AUDIENCIA  SET NR_PROCESSO = ?, CD_PESSOA_ADV = ?, DT_HORA_AGENDA = ?, SL_FORUM = ? WHERE CD_AGENDA = ?";
 			
 			stmt = conn.prepareStatement(sql);
-			
+			 
 			
 			stmt.setInt(1, audiencia.getNumeroProcesso());
 			stmt.setInt(2, audiencia.getCodigoAdvogado());
@@ -180,7 +180,7 @@ public class AudienciaDaoImpl implements AudienciaDao {
 				rs.close();
 				stmt.close();
 				//conn.close();
-			} catch (Exception e) {
+			} catch (Exception e) { 
 				e.printStackTrace();
 			}
 		}

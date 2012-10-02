@@ -23,9 +23,9 @@ public class ProcessoDaoImpl implements ProcessoDao {
 			
 			String sql = 
 					"INSERT INTO AM_processo " +
-					"(NR_PROCESSO, CD_PESSOA_FORUM, CD_PESSOA_CLIENTE, CD_CAUSA, CD_COBRANCA, DS_PROCESSO," +
+					"( CD_PESSOA_FORUM, CD_PESSOA_CLIENTE, CD_CAUSA, CD_COBRANCA, DS_PROCESSO," +
 					"	DT_ABERTURA,DT_FECHAMENTO,DD_DIA_VENCIMENTO,CD_RESULTADO,DS_OBSERVACAO) " +
-					"VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+					"VALUES (?,?,?,?,?,?,?,?,?,?)";
 			
 			stmt = conn.prepareStatement(sql);
 			

@@ -15,42 +15,32 @@ public class Despesa implements Serializable{
 		
 	}
 	
-	
 	private static final long serialVersionUID = -5953858768380671698L;
 	
-	private int codigoDespesa;
-	private int codigoLancamento;
-	private int codigoTipoDespesa;
-	private int numeroProcesso;
+	private int codigo;
+	private TipoDespesa tipoDespesa;
+	private Processo processo;
 	private Date data;
 	private double valor;
 	private String observacao;
 	
-	
-	
-	public int getCodigoDespesa() {
-		return codigoDespesa;
+	public int getCodigo() {
+		return codigo;
 	}
-	public void setCodigoDespesa(int codigoDespesa) {
-		this.codigoDespesa = codigoDespesa;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
-	public int getCodigoLancamento() {
-		return codigoLancamento;
+	public TipoDespesa getTipoDespesa() {
+		return tipoDespesa;
 	}
-	public void setCodigoLancamento(int codigoLancamento) {
-		this.codigoLancamento = codigoLancamento;
+	public void setTipoDespesa(TipoDespesa tipoDespesa) {
+		this.tipoDespesa = tipoDespesa;
 	}
-	public int getCodigoTipoDespesa() {
-		return codigoTipoDespesa;
+	public Processo getProcesso() {
+		return processo;
 	}
-	public void setCodigoTipoDespesa(int codigoTipoDespesa) {
-		this.codigoTipoDespesa = codigoTipoDespesa;
-	}
-	public int getNumeroProcesso() {
-		return numeroProcesso;
-	}
-	public void setNumeroProcesso(int numeroProcesso) {
-		this.numeroProcesso = numeroProcesso;
+	public void setProcesso(Processo processo) {
+		this.processo = processo;
 	}
 	public Date getData() {
 		return data;
@@ -69,6 +59,9 @@ public class Despesa implements Serializable{
 	}
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

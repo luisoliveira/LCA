@@ -14,7 +14,7 @@ public class Audiencia implements Serializable {
 	}
 	
 	private int codigoAudiencia;
-	private int numeroProcesso;
+	private Processo processo;
 	private int codigoAdvogado;
 	private Date dataHoraAgenda;
 	private int salaForum;
@@ -25,12 +25,6 @@ public class Audiencia implements Serializable {
 	}
 	public void setCodigoAudiencia(int codigoAudiencia) {
 		this.codigoAudiencia = codigoAudiencia;
-	}
-	public int getNumeroProcesso() {
-		return numeroProcesso;
-	}
-	public void setNumeroProcesso(int numeroProcesso) {
-		this.numeroProcesso = numeroProcesso;
 	}
 	public int getCodigoAdvogado() {
 		return codigoAdvogado;
@@ -49,6 +43,12 @@ public class Audiencia implements Serializable {
 	}
 	public void setSalaForum(int salaForum) {
 		this.salaForum = salaForum;
+	}
+	public Processo getProcesso() {
+		return processo;
+	}
+	public void setProcesso(Processo processo) {
+		this.processo = processo;
 	}
 	
 	
