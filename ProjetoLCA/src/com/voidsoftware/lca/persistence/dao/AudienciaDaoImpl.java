@@ -29,8 +29,8 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			stmt = conn.prepareStatement(sql);
 			
 			
-			stmt.setInt(1, audiencia.getNumeroProcesso());
-			stmt.setInt(2, audiencia.getCodigoAdvogado());
+			stmt.setInt(1, audiencia.getProcesso().getNumero());
+			stmt.setInt(2, audiencia.getAdvogado().getCodigo());
 			stmt.setDate(3, new java.sql.Date(audiencia.getDataHoraAgenda().getTime()));
 			stmt.setInt(4, audiencia.getSalaForum());
 			
@@ -71,8 +71,8 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			stmt = conn.prepareStatement(sql);
 			 
 			
-			stmt.setInt(1, audiencia.getNumeroProcesso());
-			stmt.setInt(2, audiencia.getCodigoAdvogado());
+			stmt.setInt(1, audiencia.getProcesso().getNumero());
+			stmt.setInt(2, audiencia.getAdvogado().getCodigo());
 			stmt.setDate(3, new java.sql.Date(audiencia.getDataHoraAgenda().getTime()));
 			stmt.setInt(4, audiencia.getSalaForum());
 			stmt.setInt(5, audiencia.getCodigoAudiencia());
@@ -165,8 +165,8 @@ public class AudienciaDaoImpl implements AudienciaDao {
 			if (rs.next()) {
 				
 				audiencia.setCodigoAudiencia(rs.getInt("CD_AGENDA"));
-				audiencia.setCodigoAdvogado(rs.getInt("NR_PROCESSO"));
-				audiencia.setCodigoAdvogado(rs.getInt("CD_PESSOA_ADV"));
+				audiencia.getProcesso().setNumero(rs.getInt("NR_PROCESSO"));
+				audiencia.getAdvogado().setCodigo(rs.getInt("CD_PESSOA_ADV"));
 				audiencia.setDataHoraAgenda(rs.getDate("DT_HORA_AGENDA"));
 				audiencia.setSalaForum(rs.getInt("SL_FORUM"));
 								

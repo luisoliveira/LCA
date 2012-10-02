@@ -30,8 +30,8 @@ public class DespesaDaoImpl implements DespesaDao {
 			
 			
 			
-			stmt.setInt(1, despesa.getCodigoDespesa());
-			stmt.setInt(2, despesa.getNumeroProcesso());
+			stmt.setInt(1, despesa.getCodigo());
+			stmt.setInt(2, despesa.getProcesso().getNumero());
 			//stmt.setDate(3, despesa.getData().getTime()); 
 			stmt.setDouble(4, despesa.getValor());
 			stmt.setString(5, despesa.getObservacao());
@@ -75,11 +75,11 @@ public class DespesaDaoImpl implements DespesaDao {
 			stmt = conn.prepareStatement(sql);
 			
 			
-			stmt.setInt(1, despesa.getNumeroProcesso());
+			stmt.setInt(1, despesa.getProcesso().getNumero());
 			stmt.setDate(2, new java.sql.Date(despesa.getData().getTime())); 
 			stmt.setDouble(3, despesa.getValor());
 			stmt.setString(4, despesa.getObservacao());
-			stmt.setInt(5, despesa.getCodigoDespesa());
+			stmt.setInt(5, despesa.getCodigo());
 			
 			stmt.execute();
 			
@@ -163,9 +163,9 @@ public class DespesaDaoImpl implements DespesaDao {
 			rs = stmt.executeQuery();
 			
 			if(rs.next()) {
-				despesa.setCodigoLancamento(rs.getInt("CD_LANCAMENTO"));
-				despesa.setCodigoDespesa(rs.getInt("CD_DESPESA"));
-				despesa.setNumeroProcesso(rs.getInt("NR_PROCESSO"));
+				despesa.setCodigo(rs.getInt("CD_LANCAMENTO"));
+				
+				despesa.getProcesso().setNumero(rs.getInt("NR_PROCESSO"));
 				despesa.setData(rs.getDate("DT_DESPESA"));
 				despesa.setValor(rs.getDouble("VL_DESPESA"));
 				despesa.setObservacao(rs.getString("DS_OBSERVACAO"));
@@ -210,9 +210,8 @@ public class DespesaDaoImpl implements DespesaDao {
 			
 			while(rs.next()) {
 				despesa = new Despesa();
-				despesa.setCodigoLancamento(rs.getInt("CD_LANCAMENTO"));
-				despesa.setCodigoDespesa(rs.getInt("CD_DESPESA"));
-				despesa.setNumeroProcesso(rs.getInt("NR_PROCESSO"));
+				despesa.setCodigo(rs.getInt("CD_LANCAMENTO"));
+				despesa.getProcesso().setNumero(rs.getInt("NR_PROCESSO"));
 				despesa.setData(rs.getDate("DT_DESPESA"));
 				despesa.setValor(rs.getDouble("VL_DESPESA"));
 				despesa.setObservacao(rs.getString("DS_OBSERVACAO"));

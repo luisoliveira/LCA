@@ -14,9 +14,8 @@ public class TestePersistencia {
 		DespesaDaoImpl despDao = new DespesaDaoImpl();
 		Despesa desp = despDao.consultar(1);
 
-		System.out.println(desp.getCodigoLancamento());
-		System.out.println(desp.getCodigoDespesa());
-		System.out.println(desp.getNumeroProcesso());
+		System.out.println(desp.getCodigo());
+		System.out.println(desp.getProcesso().getNumero());
 		System.out.println(desp.getData());
 		System.out.println(desp.getValor());
 		System.out.println(desp.getObservacao()); 
@@ -28,9 +27,8 @@ public class TestePersistencia {
 
 		desp = despDao.consultar(1);
 
-		System.out.println(desp.getCodigoLancamento());
-		System.out.println(desp.getCodigoDespesa());
-		System.out.println(desp.getNumeroProcesso());
+		System.out.println(desp.getCodigo());
+		System.out.println(desp.getProcesso().getNumero());
 		System.out.println(desp.getData());
 		System.out.println(desp.getValor());
 		System.out.println(desp.getObservacao());
