@@ -11,9 +11,7 @@ import java.util.Date;
 public class Despesa implements Serializable{
 	
 
-	public Despesa (){
-		
-	}
+
 	
 	private static final long serialVersionUID = -5953858768380671698L;
 	
@@ -23,6 +21,14 @@ public class Despesa implements Serializable{
 	private Date data;
 	private double valor;
 	private String observacao;
+	
+	public Despesa (){
+		
+		tipoDespesa = new TipoDespesa();
+		processo = new Processo();		
+		
+	}	
+	
 	
 	public int getCodigo() {
 		return codigo;

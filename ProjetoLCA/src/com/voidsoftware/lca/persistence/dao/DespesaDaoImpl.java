@@ -81,6 +81,7 @@ public class DespesaDaoImpl implements DespesaDao {
 			stmt.setString(4, despesa.getObservacao());
 			stmt.setInt(5, despesa.getCodigo());
 			
+			System.out.println(stmt);
 			stmt.execute();
 			
 			conn.commit();

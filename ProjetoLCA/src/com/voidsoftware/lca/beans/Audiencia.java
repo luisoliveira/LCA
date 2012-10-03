@@ -7,9 +7,7 @@ public class Audiencia implements Serializable {
 
 	private static final long serialVersionUID = 3221757252085335525L;
 
-	public Audiencia() {
-
-	}
+	
 
 	private int codigoAudiencia;
 	private Processo processo;
@@ -17,6 +15,14 @@ public class Audiencia implements Serializable {
 	private Date dataHoraAgenda;
 	private int salaForum;
 
+	public Audiencia() {
+		
+		processo = new Processo();
+		advogado = new Advogado();
+	}	
+	
+	
+	
 	public int getCodigoAudiencia() {
 		return codigoAudiencia;
 	}

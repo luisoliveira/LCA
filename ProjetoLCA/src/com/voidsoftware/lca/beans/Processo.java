@@ -7,9 +7,7 @@ public class Processo implements Serializable {
 
 	private static final long serialVersionUID = -5653538023743584304L;
 
-	public Processo() {
-		
-	}
+	
 		
 	private int numero;
 	private Forum forum;
@@ -22,6 +20,16 @@ public class Processo implements Serializable {
 	private int diaVencimento;
 	private int codigoResultado;
 	private String observacao;
+	
+	public Processo() {
+		
+		forum = new Forum();
+		cliente = new Cliente();
+		tipoCausa = new TipoCausa();
+		tipoCobranca = new TipoCobranca();
+	}
+	
+	
 	
 	public int getNumero() {
 		return numero;

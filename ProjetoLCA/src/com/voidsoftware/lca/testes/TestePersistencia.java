@@ -21,7 +21,7 @@ public class TestePersistencia {
 		System.out.println(desp.getObservacao()); 
 		System.out.println("APOS ATUALIZAR !! ");
 
-		desp.setObservacao("NOTE BOOK 4430s - Luis");
+		desp.setObservacao("NOTE BOOK 4430s - Teste Atualizacao");
 
 		despDao.atualizar(desp);
 
