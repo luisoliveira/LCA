@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.voidsoftware.lca.beans.Processo;
 import com.voidsoftware.lca.persistence.interfaces.ProcessoDao;
@@ -204,4 +206,61 @@ public class OracleProcessoDao implements ProcessoDao {
 		return processo;
 	}
 
+	@Override
+	public List<Processo> listaProcessosEmAberto() {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Processo processo = new Processo();
+		List<Processo> lista = new ArrayList<Processo>(); 
+		
+		try {
+			conn = ConnectionFactory.obterConexaoOracle();
+			
+			String sql = "SELECT NR_PROCESSO, CD_PESSOA_FORUM, CD_PESSOA_CLIENTE, CD_CAUSA, CD_COBRANCA, DS_PROCESSO, DT_ABERTURA,DT_FECHAMENTO,DD_DIA_VENCIMENTO,CD_RESULTADO,DS_OBSERVACAO"+ 
+							"FROM AM_processo WHERE DT_FECHAMENTO IS NULL;";
+			
+			stmt = conn.prepareStatement(sql);
+			
+			
+			
+			rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				processo = new Processo();
+				
+				processo.setNumero(rs.getInt("NR_PROCESSO"));
+				processo.getForum().setCodigo(rs.getInt("CD_PESSOA_FORUM"));
+				processo.getCliente().setCodigo(rs.getInt("CD_PESSOA_CLIENTE"));
+				processo.getTipoCausa().setCodigo(rs.getInt("CD_CAUSA"));
+				processo.getTipoCobranca().setCodigo(rs.getInt("CD_COBRANCA"));
+				processo.setDescricao(rs.getString("DS_PROCESSO"));
+				processo.setDataAbertura(rs.getDate("DT_ABERTURA"));
+				processo.setDataFechamento(rs.getDate("DT_FECHAMENTO"));
+				processo.setDiaVencimento(rs.getInt("DD_DIA_VENCIMENTO"));
+				processo.setCodigoResultado(rs.getInt("CD_RESULTADO"));
+				processo.setObservacao("DS_OBSERVACAO");
+				lista.add(processo);
+				processo = null;
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				rs.close();
+				stmt.close();
+				//conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return lista;
+	}
+	
+	
+	
 }
